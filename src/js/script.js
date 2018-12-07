@@ -19,7 +19,7 @@ function preload() {
 }
 function setup() {
 
-  canvas = createCanvas(800, 700);
+  canvas = createCanvas(1000, 700);
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
 

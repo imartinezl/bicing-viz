@@ -18,10 +18,10 @@ function getToDraw(t){
     // console.log("STOP: ",stopT[t/f]);
     stopT[t/f].forEach(function(p){
       toDraw.splice( toDraw.indexOf(p), 1 );
-      if(!tooFast){
-        trips[p].saveLast(p);
-      }else{
+      if(tooFast || tSliderPulsed>0){
         trips[p].saveAll(p);
+      }else{
+        trips[p].saveLast(p);
       }
     })
   }

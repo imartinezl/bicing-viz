@@ -26,26 +26,29 @@ function fSliderChanged(){
    toDraw = [];
    tooFast = f > g;
    getStartStop(tripData, g, f);
+   addTrips(tripData);
+
    removeElements();
    initPlayButton();
    initFreqSlider();
    initTimeSlider();
-   console.log("DONE");
 }
 function initTimeSlider(){
   tSlider = createSlider((startTMin-1)*f, stopTMax*f, t, g); // in seconds
   tSlider.position(20,200);
   tSlider.style('width', '300px');
   tSlider.style('z-index', '1');
-  tSlider.changed(sSliderChanged);
+  tSlider.changed(tSliderChanged);
 }
-function sSliderChanged(){
+let tSliderPulsed = -1;
+function tSliderChanged(){
    console.log("TIME SLIDER CHANGE", tSlider.value());
    toDraw = [];
    visited = [];
    t = tSlider.value();
-   console.log(t);
+   tSliderPulsed *= -1;
    for (var i = 0; i < t; i += f) {
       getToDraw(i)
    }
+   tSliderPulsed *= -1;
 }

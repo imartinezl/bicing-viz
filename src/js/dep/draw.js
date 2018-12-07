@@ -39,9 +39,9 @@ function drawTrips(){
   })
 
   // Everything that needs to be redrawn goes here
-  if(toDraw.length>0){
-    console.log(toDraw);
-  }
+  // if(toDraw.length>0){
+  //   console.log(toDraw);
+  // }
   toDraw.forEach(function(p){
     drawPoint(p);
   })
