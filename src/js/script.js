@@ -1,6 +1,6 @@
 // INITIALIZATION
 let t = 0;//0;
-let f = 30*60; // TIME FREQUENCY (in seg)
+let f = 5*60; // TIME FREQUENCY (in seg)
 let g = 15*60; // TRIPS FREQUENCY (15min in seg)
 let toDraw = [];
 let visited = [];
@@ -28,6 +28,7 @@ function setup() {
   getStartStop(tripData, g, f);
   addTrips(tripData);
 
+  t = (startTMin - 1)*f;
   initPlayButton();
   initFreqSlider();
   initTimeSlider();

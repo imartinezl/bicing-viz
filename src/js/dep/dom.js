@@ -14,7 +14,7 @@ function buttonMousePressed(){
 }
 
 function initFreqSlider(){
-  fSlider = createSlider(5, 60, f/60, 5);
+  fSlider = createSlider(0.5, 15, f/60, 0.5);
   fSlider.position(20,100);
   fSlider.style('width', '300px');
   fSlider.style('z-index', '1');
