@@ -19,7 +19,7 @@ function preload() {
 }
 function setup() {
 
-  canvas = createCanvas(1000, 700);
+  canvas = createCanvas(1000, 600);
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
 
@@ -39,5 +39,5 @@ function draw(){
     t += f;
     getToDraw(t);
   }
-  drawTrips();
+  if(d>0)  drawTrips();
 }
