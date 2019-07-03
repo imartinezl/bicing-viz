@@ -1,9 +1,9 @@
 function drawStations(){
   noStroke();
-  fill(255,128,0);
+  fill(240,255,240);
   for(var i = 0; i < stationsCoor.length; i++){
     var pos = myMap.latLngToPixel(stationsCoor[i][0], stationsCoor[i][1])
-    ellipse(pos.x, pos.y, 7, 7);
+    ellipse(pos.x, pos.y, 8, 8);
   }
 }
 function drawPoint(p){
@@ -11,14 +11,14 @@ function drawPoint(p){
   trips[p].next();
 
   noStroke();
-  fill(0,0,0);
+  fill(223,176,75);
   ellipse(trips[p].position.x, trips[p].position.y, 5, 5);
 
   trips[p].update();
   trips[p].save(p);
 }
 function drawPath(v, i){
-  stroke(255,0,0, 40);
+  stroke(223,176,75, 60);
   strokeWeight(trips[i].flow);
 
   noFill();
