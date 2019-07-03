@@ -14,11 +14,13 @@
     "gulp-inject": "^5.0.2",
     "gulp-livereload": "^4.0.1",
     "gulp-order": "^1.2.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.12.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
