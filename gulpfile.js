@@ -3,6 +3,9 @@ var order = require("gulp-order");
 var concat = require("gulp-concat");
 var inject = require('gulp-inject');
 var webserver = require('gulp-webserver');
+var sass = require('gulp-sass');
+ 
+sass.compiler = require('node-sass');
 
 var paths = {
   src: 'src/**/*',
@@ -10,6 +13,7 @@ var paths = {
   srcCSS: 'src/**/*.css',
   srcJS:  'src/**/*.js',
   srcJSON:  'src/**/*.json',
+  srcSCSS:  'src/**/*.scss',
 
   tmp: 'tmp',
   tmpIndex: 'tmp/index.html',
@@ -34,13 +38,20 @@ gulp.task('js', function () {
   return gulp.src(paths.srcJS)
     .pipe(gulp.dest(paths.tmp));
 });
-// Set up the JavaScript task
+// Set up the JSON task
 gulp.task('json', function () {
   return gulp.src(paths.srcJSON)
     .pipe(gulp.dest(paths.tmp));
 });
+// Set up the Fonts task
+gulp.task('sass', function () {
+  return gulp.src(paths.srcSCSS)
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest(paths.tmp));
+});
 // Combine all tasks into one task
-gulp.task('copy', ['html', 'css', 'js','json']);
+gulp.task('copy', ['html', 'css', 'js', 'json', 'sass']);
+
 
 var transform = function (filepath, file, i, length) {
     return '<script src="' + filepath + '" async></script>';
